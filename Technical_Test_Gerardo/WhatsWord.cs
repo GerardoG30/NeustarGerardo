@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace Technical_Test_Gerardo
@@ -22,7 +23,7 @@ namespace Technical_Test_Gerardo
 
         private bool FindWords(List<string> listWords, string word)
         {
-            return listWords.FirstOrDefault(x => x.Contains(word)).Any();
+            return listWords.Any(x => x.Contains(word));
         }
 
         private List<string> CreateWords(char[,] charWord)
@@ -40,13 +41,24 @@ namespace Technical_Test_Gerardo
                     listOfWords.Add(palabra.ToString());
                     palabra = palabra.Clear();
                 }
-
-
-
+                for (int i = 0; i < charWord.GetLength(0); i++)
+                {
+                    for (int j = 0; j < charWord.GetLength(1); j++)
+                    {
+                        palabra = palabra.Append(charWord[j, i]);
+                    }
+                    listOfWords.Add(palabra.ToString());
+                    palabra = palabra.Clear();
+                }
             }
-            return listOfWords;
-        }
-    }
-   
 
+            return listOfWords;
+
+        }
+
+    }
 }
+
+
+
+
