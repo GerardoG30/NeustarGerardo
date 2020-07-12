@@ -8,10 +8,22 @@ namespace Technical_Test_Gerardo
     {
         static void Main(string[] args)
         {
-
+            //SortingSquares
             var arrayAscending = SortingSquares(new int[] { -1, 0, 2 });
             string array = string.Join(",", arrayAscending);
+            Console.WriteLine("SortingSquares Output");
             Console.Write(array);
+            //Ascending tree
+            var NodeWeight = new int[] { 2, 4, 3 };
+            Ascending_Tree tree = new Ascending_Tree();
+            for (int i = 0; i < NodeWeight.Length; i++)
+            {
+                tree.AddNode(NodeWeight[i]);
+            }
+            
+            tree.PrintNodes();
+            Console.WriteLine("Ascending tree Output");
+            tree.OrderWeigths();
             Console.ReadLine();
         }
 
