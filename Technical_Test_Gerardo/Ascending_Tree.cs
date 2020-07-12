@@ -82,7 +82,7 @@ namespace Technical_Test_Gerardo
 
                 weights.Add(nodes.weight);
             }
-            Console.Write(string.Join(",", weights.OrderBy(num => num)));
+            Console.WriteLine(string.Join(",", weights.OrderBy(num => num)));
         }
 
 

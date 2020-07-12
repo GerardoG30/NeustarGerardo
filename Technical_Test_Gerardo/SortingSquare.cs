@@ -20,10 +20,19 @@ namespace Technical_Test_Gerardo
             {
                 tree.AddNode(NodeWeight[i]);
             }
-            
+
             tree.PrintNodes();
             Console.WriteLine("Ascending tree Output");
             tree.OrderWeigths();
+
+
+            //What's Word
+            string word = "dog";
+            char[,] charWords = new char[,] { { 'x', 'y', 'z' }, { 'd', 'o', 'g' }, { 'a', 'b', 'c' } };
+            WhatsWord words = new WhatsWord();
+            var response = words.FindWord(word, charWords);
+            Console.WriteLine("Whats word Output");
+            Console.WriteLine(response);
             Console.ReadLine();
         }
 
